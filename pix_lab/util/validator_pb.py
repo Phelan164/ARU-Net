@@ -31,7 +31,6 @@ class Validator_pb(object):
             tgt = tf.placeholder("float", shape=[None, None, None, self.n_class])
             cost = get_cost(log, tgt, self.cost_kwargs)
             print("Start validation")
-
             total_loss = 0
             time_val_step = time.time()
             for step in range(0, val_size):
@@ -40,6 +39,7 @@ class Validator_pb(object):
                     print("No Validation Data available. Skip Validation Path.")
                     break
                 # Run validation
+                print("start...")
                 loss, aPred = sess.run([cost, predictor],
                                        feed_dict={x: batch_x, tgt: batch_tgt})
                 total_loss += loss

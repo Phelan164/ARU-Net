@@ -126,7 +126,6 @@ class Data_provider_la(object):
                             maps.append(aImg[:,:,c])
                             imgChannels += 1
                     filename, file_extension = os.path.splitext(path)
-
                     # In the one hot encoding scenario don not load the clutter class GT
                     to_load = tgtChannels
                     if self.one_hot_encoding:
