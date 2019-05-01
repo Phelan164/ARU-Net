@@ -5,8 +5,8 @@ import time
 
 import tensorflow as tf
 
-from cost import get_cost
-from optimizer import get_optimizer
+from pix_lab.training.cost import get_cost
+from pix_lab.training.optimizer import get_optimizer
 
 class Trainer(object):
     """
