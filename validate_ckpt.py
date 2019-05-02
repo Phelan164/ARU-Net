@@ -10,8 +10,8 @@ from pix_lab.util.validator_ckpt import Validator_ckpt
 
 
 @click.command()
-@click.option('--path_list_val', default="./demo_images/imgs.lst")
-@click.option('--restore_ckt_path', default="......./models/model100")
+@click.option('--path_list_val', default="./data/test.lst")
+@click.option('--restore_ckt_path', default="./models/model100")
 @click.option('--restore_ema', default=True)
 def run(path_list_val, restore_ckt_path, restore_ema):
     # Since the input images are of arbitrarily size, the autotune will significantly slow down the training!

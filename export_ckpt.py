@@ -9,9 +9,9 @@ from pix_lab.util.exporter import Exporter_ckpt
 
 
 @click.command()
-@click.option('--restore_ckt_path', default="../../models/model12")
-@click.option('--export_name', default="../../models/linecut.pb")
-@click.option('--use_ema', default=True)
+@click.option('--restore_ckt_path', default="./models/model100")
+@click.option('--export_name', default="./models/linecut.pb")
+@click.option('--use_ema', default=False)
 def run(restore_ckt_path, export_name, use_ema):
     img_channels = 1
     n_class = 3

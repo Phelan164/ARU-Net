@@ -5,8 +5,8 @@ import time
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
-from pix_lab.training.cost import get_cost
-from pix_lab.util.util import load_graph
+from ..training.cost import get_cost
+from ..util.util import load_graph
 
 class Validator_pb(object):
     """

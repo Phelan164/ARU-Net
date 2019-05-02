@@ -7,9 +7,9 @@ from pix_lab.data_provider.data_provider_la import Data_provider_la
 from pix_lab.training.trainer import Trainer
 
 @click.command()
-@click.option('--path_list_train', default="../../data/train.lst")
-@click.option('--path_list_val', default="../../data/val.lst")
-@click.option('--output_folder', default="../../models/")
+@click.option('--path_list_train', default="./data/train.lst")
+@click.option('--path_list_val', default="./data/val.lst")
+@click.option('--output_folder', default="./models/")
 @click.option('--restore_path', default=None)
 def run(path_list_train, path_list_val, output_folder, restore_path):
     # Since the input images are of arbitrarily size, the autotune will significantly slow down training!
@@ -18,7 +18,7 @@ def run(path_list_train, path_list_val, output_folder, restore_path):
     # Images have to be gray scale images
     img_channels = 1
     # Number of output classes
-    n_class = 3
+    n_class = 2
     kwargs_dat = dict(batchsize_tr=1, scale_min=0.2, scale_max=0.5, scale_val=0.33, affine_tr=True,
                       one_hot_encoding=True)
     data_provider = Data_provider_la(path_list_train, path_list_val, n_class, threadNum=1, kwargs_dat=kwargs_dat)
